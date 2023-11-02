@@ -1,18 +1,18 @@
 
 const apiKey = 'c11b605b4834c12558b18c6b205eea24';
 const pelicula = document.querySelector('#pelis');
-const input = document.querySelector('#input-de-busqueda'); // Asume que tienes un campo de entrada con este id
-const boton = document.querySelector('#boton-de-busqueda'); // Asume que tienes un botón con este id
+const input = document.querySelector('#input-de-busqueda');
+const boton = document.querySelector('#boton-de-busqueda');
 
 const options = {
     method: 'GET',
     headers: {
-      accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMTFiNjA1YjQ4MzRjMTI1NThiMThjNmIyMDVlZWEyNCIsInN1YiI6IjY1NDNiMGZlZTFhZDc5MDEyYzkxNDQ1YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.J5qC9ofPBWMOYPWkvJIBfN1-MbWWVOR7jW2Jfwu1WBU'
+        accept: 'application/json',
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMTFiNjA1YjQ4MzRjMTI1NThiMThjNmIyMDVlZWEyNCIsInN1YiI6IjY1NDNiMGZlZTFhZDc5MDEyYzkxNDQ1YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.J5qC9ofPBWMOYPWkvJIBfN1-MbWWVOR7jW2Jfwu1WBU'
     }
 };
 
-// Cuando el usuario hace clic en el botón de búsqueda, realiza la solicitud a la API
+
 boton.addEventListener('click', () => {
     const terminoDeBusqueda = input.value;
     fetch(`https://api.themoviedb.org/3/search/movie?query=${terminoDeBusqueda}&api_key=${apiKey}`, options)
@@ -40,4 +40,3 @@ boton.addEventListener('click', () => {
         .catch(err => console.error(err));
 });
 
-    
